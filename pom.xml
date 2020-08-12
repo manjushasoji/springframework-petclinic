@@ -10,7 +10,7 @@
 
 	<groupId>manj.springframework</groupId>
 	<artifactId>springframework-petclinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<modules>
 		<module>petclinic-data</module>
@@ -46,7 +46,7 @@
 	</build>
 	<scm>
 		<developerConnection>scm:git:https://github.com/manjushasoji/springframework-petclinic.git</developerConnection>		
-	  <tag>springframework-petclinic-0.0.2</tag>
+	  <tag>springframework-petclinic-0.0.1</tag>
   </scm>
 
 
