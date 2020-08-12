@@ -39,14 +39,14 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git:https://github.com/manjushasoji/springframework-petclinic.git</developerConnection>
-		
-	  <tag>HEAD</tag>
+		<developerConnection>scm:git:https://github.com/manjushasoji/springframework-petclinic.git</developerConnection>		
+	  <tag>springframework-petclinic-0.0.1</tag>
   </scm>
 
 
