@@ -3,9 +3,9 @@ package manj.springframework.springframeworkpetclinic.services.map;
 import java.util.Set;
 
 import manj.springframework.springframeworkpetclinic.model.Pet;
-import manj.springframework.springframeworkpetclinic.services.CrudService;
+import manj.springframework.springframeworkpetclinic.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override
 	public Set<Pet> findAll() {
