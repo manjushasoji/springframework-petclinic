@@ -4,56 +4,63 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import manj.springframework.springframeworkpetclinic.model.Owner;
+import manj.springframework.springframeworkpetclinic.model.PetType;
 import manj.springframework.springframeworkpetclinic.model.Vet;
 import manj.springframework.springframeworkpetclinic.services.OwnerService;
+import manj.springframework.springframeworkpetclinic.services.PetTypeService;
 import manj.springframework.springframeworkpetclinic.services.VetService;
-import manj.springframework.springframeworkpetclinic.services.map.OwnerServiceMap;
-import manj.springframework.springframeworkpetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-	
+
 	private final OwnerService ownerService;
 	private final VetService vetService;
+	private final PetTypeService petTypeService;
 
-	public DataLoader(OwnerService ownerService, VetService vetService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService = petTypeService;
 	}
 
 	public void run(String... args) throws Exception {
 
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		PetType savedDogPetType = petTypeService.save(dog);
+
+		PetType cat = new PetType();
+		cat.setName("Cat");
+		PetType savedCatPetType = petTypeService.save(cat);
+
 		Owner owner1 = new Owner();
-        owner1.setFirstName("Michael");
-        owner1.setLastName("Weston");
-        
-        ownerService.save(owner1);
-        
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glenanne");
+		owner1.setFirstName("Michael");
+		owner1.setLastName("Weston");
 
-        ownerService.save(owner2);
-        
-        System.out.println("Loaded Owners....");
+		ownerService.save(owner1);
 
-        Vet vet1 = new Vet();
-        vet1.setFirstName("Sam");
-        vet1.setLastName("Axe");
+		Owner owner2 = new Owner();
+		owner2.setFirstName("Fiona");
+		owner2.setLastName("Glenanne");
 
-        vetService.save(vet1);
+		ownerService.save(owner2);
 
-        Vet vet2 = new Vet();
-        vet2.setFirstName("Jessie");
-        vet2.setLastName("Porter");
+		System.out.println("Loaded Owners....");
 
-        vetService.save(vet2);
+		Vet vet1 = new Vet();
+		vet1.setFirstName("Sam");
+		vet1.setLastName("Axe");
 
-        System.out.println("Loaded Vets....");
-		
-		
+		vetService.save(vet1);
+
+		Vet vet2 = new Vet();
+		vet2.setFirstName("Jessie");
+		vet2.setLastName("Porter");
+
+		vetService.save(vet2);
+
+		System.out.println("Loaded Vets....");
+
 	}
-	
-	
 
 }

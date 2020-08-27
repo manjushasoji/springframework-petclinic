@@ -2,9 +2,12 @@ package manj.springframework.springframeworkpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import manj.springframework.springframeworkpetclinic.model.PetType;
 import manj.springframework.springframeworkpetclinic.services.PetTypeService;
 
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
 	@Override
@@ -25,13 +28,13 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
 	@Override
 	public void delete(PetType object) {
 		super.delete(object);
-		
+
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
-		
+
 	}
 
 }
