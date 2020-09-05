@@ -70,8 +70,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	}
 
 	@Override
-	public Owner findByFirstName(String firstName) {
-		// TODO Auto-generated method stub
+	public Owner findByLastName(String firstName) {
+		 //todo - impl
 		return null;
 	}
 
