@@ -2,6 +2,7 @@ package manj.springframework.springframeworkpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import manj.springframework.springframeworkpetclinic.model.Owner;
@@ -11,6 +12,7 @@ import manj.springframework.springframeworkpetclinic.services.PetService;
 import manj.springframework.springframeworkpetclinic.services.PetTypeService;
 
 @Service
+@Profile({ "default", "map" })
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;
@@ -71,7 +73,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
 	@Override
 	public Owner findByLastName(String firstName) {
-		 //todo - impl
+		// todo - impl
 		return null;
 	}
 
