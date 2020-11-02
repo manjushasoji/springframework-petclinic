@@ -73,7 +73,7 @@ class OwnerControllerTest {
         .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
                 Owner.builder().id(2l).build()));
 		
-		mockMvc.perform(get("/owners")).andExpect(status().isOk()).andExpect(model().attributeExists("owners"))
+		mockMvc.perform(get("/owners")).andExpect(status().isOk())
 				.andExpect(view().name("owners/ownersList"))
 				.andExpect(model().attribute("selections", hasSize(2)));
 	}
